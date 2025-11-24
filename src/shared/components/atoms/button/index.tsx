@@ -1,6 +1,5 @@
 import { type ReactNode } from "react";
-import { Button as FlowbiteButton, ButtonProps as FlowbiteButtonProps } from "flowbite-react";
-import { CustomFlowbiteTheme } from "flowbite-react/dist/types";
+import { type CustomFlowbiteTheme, Button as FlowbiteButton, ButtonProps as FlowbiteButtonProps } from "flowbite-react";
 
 interface ButtonProps extends FlowbiteButtonProps {
   children: ReactNode;
