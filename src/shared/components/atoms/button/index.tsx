@@ -1,12 +1,12 @@
 import { type ReactNode } from "react";
-import { type CustomFlowbiteTheme, Button as FlowbiteButton, ButtonProps as FlowbiteButtonProps } from "flowbite-react";
+import { Button as FlowbiteButton, ButtonProps as FlowbiteButtonProps } from "flowbite-react";
 
 interface ButtonProps extends FlowbiteButtonProps {
   children: ReactNode;
   color: FlowbiteButtonProps["color"];
 }
 
-const customTheme: CustomFlowbiteTheme["button"] = {
+const customTheme = {
   base: "relative flex items-center justify-center rounded-lg text-center font-medium focus:outline-none focus:ring-0 cursor-pointer",
   disabled: "pointer-events-none opacity-50",
   fullSized: "w-full",

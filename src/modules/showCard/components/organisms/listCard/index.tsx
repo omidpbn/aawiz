@@ -29,16 +29,30 @@ const ListCard: React.FC = () => {
         setProducts(res.data);
         setDisplayedProducts(res.data);
       })
-      .catch(console.error);
+      .catch((err) => {
+        console.log(err);
+        toast.error(`An error occurred. Please try again in a few seconds.`, {
+          toastId: "error-api",
+          position: "top-right",
+        });
+      });
   }, []);
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     const number = data.numberOfViews;
-    setDisplayedProducts(products.slice(0, number));
-    toast.success(`${number} items were displayed`, {
-      toastId: "success",
-      position: "top-right",
-    });
+    const selectItems = products.slice(0, number);
+    if (selectItems.length > 0) {
+      setDisplayedProducts(selectItems);
+      toast.success(`${number} items were displayed`, {
+        toastId: "success",
+        position: "top-right",
+      });
+    } else {
+      toast.error(`There is no item to display`, {
+        toastId: "error",
+        position: "top-right",
+      });
+    }
   };
 
   return (

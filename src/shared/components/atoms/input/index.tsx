@@ -1,10 +1,10 @@
-import { FloatingLabel, type FloatingLabelProps, type CustomFlowbiteTheme } from "flowbite-react";
+import { FloatingLabel, type FloatingLabelProps } from "flowbite-react";
 
 interface InputProps extends Omit<FloatingLabelProps, "variant"> {
   variant?: FloatingLabelProps["variant"];
 }
 
-const customTheme: CustomFlowbiteTheme["floatingLabel"] = {
+const customTheme = {
   input: {
     default: {
       filled: {
